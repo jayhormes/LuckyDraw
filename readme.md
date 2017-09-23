@@ -1,36 +1,28 @@
-2017Äê1ÔÂ3ÈÕÄÃµ½Éè¼ÆÊ¦¸øµÄillustratorĞ§¹ûÍ¼£¬1ÔÂ5ÈÕÍê¹¤£¬1ÔÂ6ÈÕ¹«Ë¾Äê»áÉÏÊ¹ÓÃ¡£
-ËäÈ»×Ô¼ºÖ»ÖĞÁË×î´ÎµÄÑô¹âÆÕÕÕ½±100Ôª£¬µ«¿´×Å´ó¼Ò¿´×ÅÆÁÄ»»¶ºô£¬ĞÄÖĞ²»½ûÓĞĞ¡Ğ¡µÄ¸ßĞË¡£
+## æ„Ÿè°¢@gavinjzxï¼ˆé˜¿æï¼‰æˆç†Ÿçš„æºä»£ç ä¸è¯¦ç»†çš„æ³¨é‡Š
 
-°Ñ´úÂë·ÖÏí³öÀ´£¬ÓĞĞèÒªµÄÅóÓÑ¿ÉÔØÏÂÀ´£¬ĞŞ¸Ä³É×Ô¼ºËùĞèÒªµÄ¸ñÊ½¡£
+### æˆ‘@PillarsZhangï¼ˆç« é±¼DSï¼‰forkå¹¶æ”¹è¿›è¿™ä¸ªé¡¹ç›®æ˜¯ä¸ºäº†ç­çº§çš„ç­é˜Ÿè¯¾æŠ½ç­¾ç”¨çš„
 
-ÒòÎªÊ¹ÓÃÁËcss3 animation£¬ËùÒÔ½¨ÒéÊ¹ÓÃchrome,firefox,IE10¼°ÒÔÉÏ£¨IE9¼°ÒÔÏÂ²»Ö§³Öcss3 animation£©¡£
+*ä»¥ä¸‹ä¸ºåŸç‰ˆ+æˆ‘è¡¥å……çš„readme*
 
-µ÷ÓÃ¿â£º
-js:jquery
-css:animation
+> æŠŠä»£ç åˆ†äº«å‡ºæ¥ï¼Œæœ‰éœ€è¦çš„æœ‹å‹å¯è½½ä¸‹æ¥ï¼Œä¿®æ”¹æˆè‡ªå·±æ‰€éœ€è¦çš„æ ¼å¼ã€‚
+>
+>å› ä¸ºä½¿ç”¨äº†css3 animationï¼Œæ‰€ä»¥å»ºè®®ä½¿ç”¨chrome,firefox,IE10åŠä»¥ä¸Šï¼ˆIE9åŠä»¥ä¸‹ä¸æ”¯æŒcss3 animationï¼‰ã€‚
 
+***
 
-ÎÄ¼ş½á¹¹£º
+- è°ƒç”¨åº“ï¼š
+  - js: jquery
+  - css: animation
 
-\index.html  			³é½±Ö÷½çÃæ
+- æ–‡ä»¶ç»“æ„ï¼š
+  - \index.html  			æŠ½å¥–ä¸»ç•Œé¢
+  - \js\index.js	 		JSä¸»ç¨‹åº
+  - \js\lib\jquery-1.12.4.min.js	jQueryæ–‡ä»¶
+  - \js\lib\common.js		ä¸€äº›å…¬ç”¨å‡½æ•°
+  - \css\animate.css		css3 animationåº“
+  - \css\style.less			æ ·å¼Lessæ–‡ä»¶
+  - \css\widget\*.less		style.lesså¼•ç”¨çš„lessæ–‡ä»¶
+  - \css\img\			é¡µé¢ä¸Šæ‰€ç”¨åˆ°çš„å›¾æ ‡æ–‡ä»¶
 
-\js\index.js	 		JSÖ÷³ÌĞò
-
-\js\lib\jquery-1.12.4.min.js	jQueryÎÄ¼ş
-
-\js\lib\common.js		Ò»Ğ©¹«ÓÃº¯Êı
-
-\css\animate.css		css3 animation¿â
-
-\css\style.less			ÑùÊ½LessÎÄ¼ş
-
-\css\widget\*.less		style.lessÒıÓÃµÄlessÎÄ¼ş
-
-\css\img\			Ò³ÃæÉÏËùÓÃµ½µÄÍ¼±êÎÄ¼ş
-
-
-ÔÚÏßÑİÊ¾£º
-http://www.at4321.com/case/web/bgi/luckyMan/
-
-ÎÒµÄ¸öÈËÍøÕ¾(½¨ÒéÓÃÊÖ»úä¯ÀÀ)
-http://www.at4321.com
+***
+åœ¨çº¿æ¼”ç¤ºï¼šå¾ˆå¿«å°±æœ‰äº†
