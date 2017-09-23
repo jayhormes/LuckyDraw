@@ -211,6 +211,8 @@ body > div > section #luckyDrawing input {
     padding: 1rem;
     box-sizing: border-box;
     text-align: center;
+    border:0;
+    /*PillarsZhang:去掉跳动的文本框的外框*/
 }
 
 body > div > section > #result {

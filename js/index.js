@@ -8,12 +8,16 @@ var remainPerson = allPerson.toString().split(";");
 var luckyMan = [];
 var timer;//定时器
 var times = 1;//抽奖次数,如果不是第一次，不加粗显示领导姓名
+
+var setEmptyPerson = new Boolean();//是否每次抽取后把人数框清空
+setEmptyPerson = false
+
 $(function () {
     iconAnimation();
     //开始抽奖
     $("#btnStart").on("click", function () {
         //判断是开始还是结束
-        if ($("#btnStart").text() === "开始") {
+        if ($("#btnStart").text().substring(0,2) === "开始") {
             if (!$("#txtNum").val()) {
                 showDialog("请输入中奖人数");
                 return false;
@@ -34,7 +38,8 @@ $(function () {
             $("#bgLuckyDrawEnd").removeClass("bg");
         }
         else {
-            $("#btnStart").text("开始");//设置按钮文本为开始
+            $("#btnStart").text("开始"+"　（剩余"+remainPerson.length+"人）");//设置按钮文本为开始
+            //PillarsZhang：剩余人数我加的，这边用了全角空格
             var luckyDrawNum = $("#txtNum").val();
             startLuckDraw();//抽奖开始
 
@@ -91,7 +96,13 @@ function startLuckDraw() {
     //中奖人员
     luckyMan = luckyMan.concat(randomPerson);
     //设置抽奖人数框数字为空
-    $("#txtNum").val("");
+
+    if (setEmptyPerson) { $("#txtNum").val("");};
+    /*
+    PillarsZhang补充：有时候不需要每次都把人数框清空
+    根据需求来吧，在顶部改
+    */
+
 }
 
 //参考这篇文章：http://www.html-js.com/article/JS-rookie-rookie-learned-to-fly-in-a-moving-frame-beating-figures
