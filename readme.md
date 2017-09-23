@@ -28,5 +28,7 @@
   - \css\widget\*.less		style.less引用的less文件
   - \css\img\			页面上所用到的图标文件
 
+- 一些个性化设置
+  - \css\img\bg.png 背景图片（包括上方三个字，自己用PS改，PSD文件已经放在旁边了）
 ***
 在线演示：很快就有了
