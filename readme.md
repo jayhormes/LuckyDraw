@@ -33,6 +33,7 @@
 
 - PillarsZhang所做的改进
   - \js\autozoom.js 自适应缩放
+  - \js\settings.js 更改名单及相关设置
   - 是否每次抽取后把人数框清空
   - 去掉跳动的文本框的外框
   - 用unselectable="on"来去掉文本框的光标

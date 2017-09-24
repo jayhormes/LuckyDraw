@@ -4,19 +4,23 @@
 */
 
 $(function () {
-    //alert("hello!world!");
-    zoom();
-    /*
-    document.addEventListener("fullscreenchange", zoom);
-    document.addEventListener("mozfullscreenchange", zoom);
-    document.addEventListener("webkitfullscreenchange", zoom);
-    document.addEventListener("msfullscreenchange", zoom);
-    */
-    //这段全屏监听代码没用了
+    if (setAutoZoom) {
+        //alert("hello!world!");
+        zoom();
+        /*
+        document.addEventListener("fullscreenchange", zoom);
+        document.addEventListener("mozfullscreenchange", zoom);
+        document.addEventListener("webkitfullscreenchange", zoom);
+        document.addEventListener("msfullscreenchange", zoom);
+        */
+        //这段全屏监听代码没用了
+        };
     });
 
 $(window).resize(function(){
-    zoom();
+    if (setAutoZoom) {
+        zoom();
+        }
     });
 
 //zoom函数用于计算与调整
