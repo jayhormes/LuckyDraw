@@ -41,4 +41,5 @@
   - 添加一个“准备就绪”文字（改了好多诶）
   - 还有......
 ***
-在线演示：很快就有了
+### 界面预览
+在线演示：[http://demo.pizyds.xyz/LuckyDraw/index.html](http://demo.pizyds.xyz/LuckyDraw/index.html)
