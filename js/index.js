@@ -55,7 +55,7 @@ $(function () {
         var confirmReset = false;
         showConfirm("確認重置嗎？所有已中獎的人會重新回到抽獎池！", function () {
             //熏置未中奖人员名单
-            remainPerson = allPerson.toString().split(";");
+            remainPerson = allPerson.toString().split(",");
             //中奖人数框置空
             $("#txtNum").val("").attr("placeholder", "請輸入中獎人數");
             $("#showName").val("");
