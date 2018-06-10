@@ -2,7 +2,7 @@
 相关设置分离到settings.js
 */
 //未中奖人员名单
-var remainPerson = allPerson.toString().split(";");
+var remainPerson = allPerson.toString().split(",");
 //中奖人员名单
 var luckyMan = [];
 var timer;//定时器
@@ -77,7 +77,7 @@ $(function () {
         showImport("匯入", function () {
             //熏置未中奖人员名单
             remainPerson = "";
-            remainPerson = allPerson.toString().split(";");
+            remainPerson = allPerson.toString().split(",");
             console.log(allPerson);
             //中奖人数框置空
             $("#txtNum").val("").attr("placeholder", "請輸入中獎人數");

@@ -29,7 +29,7 @@ function DestroyConfirm() {
 }
 
 function showImport(promptStr, callback) {
-    var tempStr = "<div class='Import'><div><div>匯入資料：<input type='text' id='myText' size='30' placeholder='ex: Jack;Sam;Amy'><div><button class='btnImport' onclick='myReadData()'>確定</button><button class='btnReturn'>返回</button></div></div></div></div><script>function myReadData() {    allPerson = document.getElementById('myText').value;}</script>";
+    var tempStr = "<div class='Import'><div><div>匯入資料：<input type='text' id='myText' size='30' placeholder='ex: Jack,Sam,Amy'><div><button class='btnImport' onclick='myReadData()'>確定</button><button class='btnReturn'>返回</button></div></div></div></div><script>function myReadData() {    allPerson = document.getElementById('myText').value;}</script>";
     $("body").append(tempStr).find(".Import").find("button:nth-child(1)").on("click", function () {
         DestroyImport();
         if (typeof(callback) == "function") {
