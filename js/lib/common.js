@@ -3,7 +3,7 @@
  */
 //201604260540 by ati 显示
 function showDialog(promptStr) {
-    var tempStr = "<div class='Dialog'><div><div>" + promptStr + "<div><button class='btnCloseDialog'>确定</button></div></div></div></div>";
+    var tempStr = "<div class='Dialog'><div><div>" + promptStr + "<div><button class='btnCloseDialog'>確定</button></div></div></div></div>";
     $("body").append(tempStr).find(".Dialog").find("button").on("click", function () {
         DestroyDialog();
     });
@@ -14,7 +14,7 @@ function DestroyDialog() {
 }
 
 function showConfirm(promptStr, callback) {
-    var tempStr = "<div class='Confirm'><div><div>" + promptStr + "<div><button class='btnConfirm'>确定</button><button class='btnReturn'>返回</button></div></div></div></div>";
+    var tempStr = "<div class='Confirm'><div><div>" + promptStr + "<div><button class='btnConfirm'>確定</button><button class='btnReturn'>返回</button></div></div></div></div>";
     $("body").append(tempStr).find(".Confirm").find("button:nth-child(1)").on("click", function () {
         DestroyConfirm();
         if (typeof(callback) == "function") {
@@ -28,6 +28,20 @@ function DestroyConfirm() {
     $(".Confirm").remove();
 }
 
+function showImport(promptStr, callback) {
+    var tempStr = "<div class='Import'><div><div>匯入資料：<input type='text' id='myText' size='30' placeholder='ex: Jack;Sam;Amy'><div><button class='btnImport' onclick='myReadData()'>確定</button><button class='btnReturn'>返回</button></div></div></div></div><script>function myReadData() {    allPerson = document.getElementById('myText').value;}</script>";
+    $("body").append(tempStr).find(".Import").find("button:nth-child(1)").on("click", function () {
+        DestroyImport();
+        if (typeof(callback) == "function") {
+            callback();
+        }
+    }).next().on("click", function () {
+        DestroyImport();
+    });
+}
+function DestroyImport() {
+    $(".Import").remove();
+}
 
 function getRandomArrayElements(arr, count) {
     var shuffled = arr.slice(0),
