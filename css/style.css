@@ -382,12 +382,20 @@ body > div > footer > div > button {
 }
 
 body > div > footer > div > button#btnStart {
-    width: 361px;
+    width: 305px;
     margin-right: 16px;
     color: white;
 }
 
 body > div > footer > div > button#btnReset {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    padding: 0;
+    display: inline-block;
+}
+
+body > div > footer > div > button#btnImport {
     width: 37px;
     height: 37px;
     border-radius: 50%;
