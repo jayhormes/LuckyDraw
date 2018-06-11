@@ -293,22 +293,26 @@ body > div > section > #result > div > span > b {
 
 body > div > section > #result > div.p1 > span {
     width: 100%;
-    font-size: 8rem;
+    /*font-size: 8rem;*/
+    font-size: 2rem;
 }
 
 body > div > section > #result > div.p2 > span {
     width: 50%;
-    font-size: 4rem;
+    /*font-size: 4rem;*/
+    font-size: 2rem;
 }
 
 body > div > section > #result > div.p3 > span {
     width: 33.333333%;
-    font-size: 3.5rem;
+    /*font-size: 3.5rem;*/
+    font-size: 2rem;
 }
 
 body > div > section > #result > div.p4 > span {
     width: 25%;
-    font-size: 3rem;
+    /*font-size: 3rem;*/
+    font-size: 1.5rem;
 }
 
 body > div > section > #result > div.p5 > span,
@@ -318,7 +322,8 @@ body > div > section > #result > div.p8 > span,
 body > div > section > #result > div.p9 > span,
 body > div > section > #result > div.p10 > span {
     width: 25%;
-    font-size: 2.5rem;
+    /*font-size: 2.5rem;*/
+    font-size: 2rem;
 }
 
 body > div > section > #result > div.p11 > span,
