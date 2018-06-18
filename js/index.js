@@ -10,7 +10,7 @@ var times = 1;//抽奖次数,如果不是第一次，不加粗显示领导姓名
 
 
 $(function () {
-    iconAnimation();
+    //iconAnimation();
     //开始抽奖
     $("#btnStart").text("開始"+"　（共"+remainPerson.length+"人）");//设置按钮文本为开始
     $("#btnStart").on("click", function () {

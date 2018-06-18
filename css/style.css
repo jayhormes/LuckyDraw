@@ -65,7 +65,7 @@ html {
 .Confirm > div > div button {
     display: inline-block;
     margin: 2rem 1rem 0 1rem;
-    background: #FFC21C;
+    background: #009ED8;
     padding: 1rem 5rem;
     font-size: 1.2rem;
     color: #fff;
@@ -112,7 +112,7 @@ html {
 .Import > div > div button {
     display: inline-block;
     margin: 2rem 1rem 0 1rem;
-    background: #FFC21C;
+    background: #009ED8;
     padding: 1rem 5rem;
     font-size: 1.2rem;
     color: #fff;
@@ -200,7 +200,7 @@ html {
 }
 
 body {
-    background: #61a8f8;
+    background: #ffffff;
     height: 100%;
     width: 100%;
     margin: 0;
