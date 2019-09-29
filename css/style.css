@@ -243,12 +243,8 @@ body > div > section {
 
 body > div > section #luckyDrawing {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 200px;
-    height: 100px;
-    margin-left: -100px;
-    margin-top: -50px;
+    width: 100%;
+    height: 100%;
 }
 
 body > div > section #luckyDrawing input {
@@ -406,3 +402,7 @@ body > div > footer > div > button#btnImport {
 #select_file{
     border:0px;display:none;
   }
+
+#showName {
+    color: rgb(0, 140, 255);
+}
