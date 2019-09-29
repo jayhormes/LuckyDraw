@@ -74,6 +74,7 @@ $(function () {
     $("#btnImport").on("click", function () {
         //确认重置对话框
         var confirmReset = false;
+        /*
         showImport("匯入", function () {
             //熏置未中奖人员名单
             remainPerson = "";
@@ -92,8 +93,18 @@ $(function () {
             times++;
             console.log(times);
         });
-    });    
+        */
+    });     
 });
+
+$(document).ready(function () {
+    $('#btnImport').click(function () {
+        $('#select_file').trigger('click');
+    })
+    $('#select_file').change(function () {
+        importf(this);
+    })
+})
 
 //抽奖主程序
 function startLuckDraw() {
@@ -152,4 +163,101 @@ function iconAnimation() {
         $($icon[i]).removeClass().stop().addClass("animated " + arrAnimatoin[j]);//输入框赋值
     }, interTime);
 
+}
+function importf(obj) {//匯入
+    var wb;//讀取完成的資料
+    var rABS = false; //是否將檔案讀取為二進位制字串
+
+    if (!obj.files) {
+        return;
+    }
+    var f = obj.files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var data = e.target.result;
+        if (rABS) {
+            wb = XLSX.read(btoa(fixdata(data)), {//手動轉化
+                type: 'base64'
+            });
+        } else {
+            wb = XLSX.read(data, {
+                type: 'binary'
+            });
+        }
+        console.log("READ");
+        // 獲取 EXCEL json資料
+        var jsondata = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+        var column = [];
+        var data = [column];
+        for (var key in jsondata[0]) {
+            data[0].push(key);
+        }
+        for (var i = 0; i < jsondata.length; i++) {
+            var row = [];
+            data.push(row);
+            for (var key in jsondata[i]) {
+                data[i + 1].push(jsondata[i][key]);
+            }
+        }
+        console.log(data);
+
+        allPerson = ConvertExcel(data);
+
+        remainPerson = "";
+        remainPerson = allPerson.toString().split(",");
+        console.log(allPerson);
+        //中奖人数框置空
+        $("#txtNum").val("").attr("placeholder", "請輸入中獎人數");
+        $("#showName").val("");
+        //隐藏中奖名单,然后显示抽奖框
+        $("#result").fadeOut("normal",function(){
+            $("#result").html("<div><font size=\"10\">Ready</font></div>");
+            $("#result").fadeIn();
+            });//动画效果过渡成准备就绪（PillarsZhang）
+        $("#bgLuckyDrawEnd").removeClass("bg");//移除背景光辉
+        $("#btnStart").text("開始"+"　（共"+remainPerson.length+"人）");//设置按钮文本为开始
+        times++;
+        console.log(times);
+    };
+    if (rABS) {
+        reader.readAsArrayBuffer(f);
+    } else {
+        reader.readAsBinaryString(f);
+    }
+}
+
+function fixdata(data) { //檔案流轉BinaryString
+    var o = "",
+        l = 0,
+        w = 10240;
+    for (; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w, l * w + w)));
+    o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)));
+    return o;
+}
+
+function ConvertExcel(data) {
+    var CombineString = "";
+    var RawData;
+    console.log("ConvertExcel");
+    for (var raw = 1; raw < data.length; raw++) {
+        console.log(raw);
+        RawData = "";
+        for (var column = 0; column < data[raw].length; column++) {
+            console.log(data[raw][column]);
+            if (RawData == "") {
+                RawData = data[raw][column];
+            } else {
+                RawData = RawData + " - " + data[raw][column];
+            }
+        }
+
+        if (CombineString == "") {
+            CombineString = RawData;
+        } else {
+            CombineString = CombineString + "," + RawData;
+        }
+        console.log(CombineString);
+    }
+
+    return CombineString;
 }
