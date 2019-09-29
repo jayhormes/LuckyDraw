@@ -2,7 +2,7 @@
 相关设置分离到settings.js
 */
 //未中奖人员名单
-var remainPerson = allPerson.toString().split(";");
+var remainPerson = allPerson.toString().split(",");
 //中奖人员名单
 var luckyMan = [];
 var timer;//定时器
@@ -10,22 +10,22 @@ var times = 1;//抽奖次数,如果不是第一次，不加粗显示领导姓名
 
 
 $(function () {
-    iconAnimation();
+    //iconAnimation();
     //开始抽奖
-    $("#btnStart").text("开始"+"　（共"+remainPerson.length+"人）");//设置按钮文本为开始
+    $("#btnStart").text("開始"+"　（共"+remainPerson.length+"人）");//设置按钮文本为开始
     $("#btnStart").on("click", function () {
         //判断是开始还是结束
-        if ($("#btnStart").text().substring(0,2) === "开始") {
+        if ($("#btnStart").text().substring(0,2) === "開始") {
             if (!$("#txtNum").val()) {
-                showDialog("请输入中奖人数");
+                showDialog("請輸入中獎人數");
                 return false;
             }
             if ($("#txtNum").val() > 49) {
-                showDialog("一次最多只能输入49人");
+                showDialog("一次最多只能輸入49人");
                 return false;
             }
             if ($("#txtNum").val() > remainPerson.length) {
-                showDialog("当前抽奖人数大于奖池总人数<br>当前抽奖人数：<b>" + $("#txtNum").val() + "</b>人,奖池人数：<b>" + remainPerson.length + "</b>人");
+                showDialog("當前抽獎人數大於獎池總人數<br>當前抽獎人數：<b>" + $("#txtNum").val() + "</b>人,獎池人數：<b>" + remainPerson.length + "</b>人");
                 return false;
             }
             $("#result").fadeOut("fast");
@@ -45,32 +45,54 @@ $(function () {
             $("#luckyDrawing").val(luckyMan[luckyMan.length - 1]);//输入框显示最后一个中奖名字
             $("#result").fadeIn().find("div").removeClass().addClass("p" + luckyDrawNum);//隐藏输入框，显示中奖框
             $("#bgLuckyDrawEnd").addClass("bg");//添加中奖背景光辉
-            $("#txtNum").attr("placeholder", "输入中奖人数(" + remainPerson.length + ")");
-            $("#btnStart").text("开始"+"　（剩余"+remainPerson.length+"人）");//设置按钮文本为开始
+            $("#txtNum").attr("placeholder", "輸入中獎人數(" + remainPerson.length + ")");
+            $("#btnStart").text("開始"+"　（剩餘"+remainPerson.length+"人）");//设置按钮文本为开始
     }
     });
 
     $("#btnReset").on("click", function () {
         //确认重置对话框
         var confirmReset = false;
-        showConfirm("确认重置吗？所有已中奖的人会重新回到抽奖池！", function () {
+        showConfirm("確認重置嗎？所有已中獎的人會重新回到抽獎池！", function () {
             //熏置未中奖人员名单
-            remainPerson = allPerson.toString().split(";");
+            remainPerson = allPerson.toString().split(",");
             //中奖人数框置空
-            $("#txtNum").val("").attr("placeholder", "请输入中奖人数");
+            $("#txtNum").val("").attr("placeholder", "請輸入中獎人數");
             $("#showName").val("");
             //隐藏中奖名单,然后显示抽奖框
             $("#result").fadeOut("normal",function(){
-                $("#result").html("<div><font size=\"10\">准备就绪</font></div>");
+                $("#result").html("<div><font size=\"10\">Ready</font></div>");
                 $("#result").fadeIn();
                 });//动画效果过渡成准备就绪（PillarsZhang）
             $("#bgLuckyDrawEnd").removeClass("bg");//移除背景光辉
-            $("#btnStart").text("开始"+"　（共"+remainPerson.length+"人）");//设置按钮文本为开始
+            $("#btnStart").text("開始"+"　（共"+remainPerson.length+"人）");//设置按钮文本为开始
             times++;
             console.log(times);
 
         });
     });
+    $("#btnImport").on("click", function () {
+        //确认重置对话框
+        var confirmReset = false;
+        showImport("匯入", function () {
+            //熏置未中奖人员名单
+            remainPerson = "";
+            remainPerson = allPerson.toString().split(",");
+            console.log(allPerson);
+            //中奖人数框置空
+            $("#txtNum").val("").attr("placeholder", "請輸入中獎人數");
+            $("#showName").val("");
+            //隐藏中奖名单,然后显示抽奖框
+            $("#result").fadeOut("normal",function(){
+                $("#result").html("<div><font size=\"10\">Ready</font></div>");
+                $("#result").fadeIn();
+                });//动画效果过渡成准备就绪（PillarsZhang）
+            $("#bgLuckyDrawEnd").removeClass("bg");//移除背景光辉
+            $("#btnStart").text("開始"+"　（共"+remainPerson.length+"人）");//设置按钮文本为开始
+            times++;
+            console.log(times);
+        });
+    });    
 });
 
 //抽奖主程序
@@ -78,7 +100,7 @@ function startLuckDraw() {
     //抽奖人数
     var luckyDrawNum = $("#txtNum").val();
     if (luckyDrawNum > remainPerson.length) {
-        alert("抽奖人数大于奖池人数！请修改人数。或者点重置开始将新一轮抽奖！");
+        alert("抽獎人數大於獎池人數！請修改人数。或者點重置開始新一輪抽獎！");
         return false;
     }
     //随机中奖人
