@@ -268,7 +268,7 @@ body > div > section > #result {
 body > div > section > #result > div {
     display: table-cell;
     vertical-align: middle;
-    color: black;
+    color: rgb(246, 210, 88);
 }
 
 body > div > section > #result > div > span {
@@ -289,26 +289,30 @@ body > div > section > #result > div > span > b {
 
 body > div > section > #result > div.p1 > span {
     width: 100%;
-    /*font-size: 8rem;*/
-    font-size: 2rem;
+    font-size: 6rem;
+    color: rgb(243, 66, 84);
+    /*font-size: 2rem;*/
 }
 
 body > div > section > #result > div.p2 > span {
     width: 50%;
-    /*font-size: 4rem;*/
-    font-size: 2rem;
+    font-size: 4rem;
+    color: rgb(243, 66, 84);
+    /*font-size: 2rem;*/
 }
 
 body > div > section > #result > div.p3 > span {
     width: 33.333333%;
-    /*font-size: 3.5rem;*/
-    font-size: 2rem;
+    font-size: 3.5rem;
+    color: rgb(243, 66, 84);
+    /*font-size: 2rem;*/
 }
 
 body > div > section > #result > div.p4 > span {
     width: 25%;
-    /*font-size: 3rem;*/
-    font-size: 1.5rem;
+    font-size: 3rem;
+    color: rgb(243, 66, 84);
+    /*font-size: 1.5rem;*/
 }
 
 body > div > section > #result > div.p5 > span,
@@ -318,8 +322,9 @@ body > div > section > #result > div.p8 > span,
 body > div > section > #result > div.p9 > span,
 body > div > section > #result > div.p10 > span {
     width: 25%;
-    /*font-size: 2.5rem;*/
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: rgb(243, 66, 84);
+    /*font-size: 2rem;*/
 }
 
 body > div > section > #result > div.p11 > span,
@@ -339,12 +344,14 @@ body > div > section > #result > div.p24 > span,
 body > div > section > #result > div.p25 > span {
     width: 20%;
     font-size: 2rem;
+    color: rgb(243, 66, 84);
 }
 
 body > div > footer {
     height: 20%;
     text-align: center;
     vertical-align: middle;
+    margin-top: -10px;
 }
 
 body > div > footer > div {
@@ -363,8 +370,9 @@ body > div > footer > div > input {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    width: 172px;
-    margin-right: 16px;
+    width: 165px;
+    height: 0px;
+    margin-right: 30px;
 }
 
 body > div > footer > div > button {
@@ -375,11 +383,13 @@ body > div > footer > div > button {
     height: 3rem;
     border-radius: 1rem;
     font-size: 1rem;
+
 }
 
 body > div > footer > div > button#btnStart {
-    width: 305px;
-    margin-right: 16px;
+    height: 0px;
+    width: 280px;
+    margin-right: 50px;
     color: white;
 }
 
@@ -388,6 +398,7 @@ body > div > footer > div > button#btnReset {
     height: 37px;
     border-radius: 50%;
     padding: 0;
+    margin-left: 0px;
     display: inline-block;
 }
 
@@ -396,6 +407,7 @@ body > div > footer > div > button#btnImport {
     height: 37px;
     border-radius: 50%;
     padding: 0;
+    margin-left: 30px;
     display: inline-block;
 }
 
@@ -404,5 +416,5 @@ body > div > footer > div > button#btnImport {
   }
 
 #showName {
-    color: rgb(0, 140, 255);
+    color: rgb(36, 140, 197);
 }
