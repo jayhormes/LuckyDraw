@@ -2,7 +2,7 @@
 相关设置分离到settings.js
 */
 //未中奖人员名单
-var remainPerson = allPerson.toString().split(",");
+var remainPerson = allPerson.toString().split("|");
 //中奖人员名单
 var luckyMan = [];
 var timer;//定时器
@@ -55,7 +55,7 @@ $(function () {
         var confirmReset = false;
         showConfirm("確認重置嗎？所有已中獎的人會重新回到抽獎池！", function () {
             //熏置未中奖人员名单
-            remainPerson = allPerson.toString().split(",");
+            remainPerson = allPerson.toString().split("|");
             //中奖人数框置空
             $("#txtNum").val("").attr("placeholder", "請輸入中獎人數");
             $("#showName").val("");
@@ -204,7 +204,7 @@ function importf(obj) {//匯入
         allPerson = ConvertExcel(data);
 
         remainPerson = "";
-        remainPerson = allPerson.toString().split(",");
+        remainPerson = allPerson.toString().split("|");
         console.log(allPerson);
         //中奖人数框置空
         $("#txtNum").val("").attr("placeholder", "請輸入中獎人數");
@@ -254,7 +254,7 @@ function ConvertExcel(data) {
         if (CombineString == "") {
             CombineString = RawData;
         } else {
-            CombineString = CombineString + "," + RawData;
+            CombineString = CombineString + "|" + RawData;
         }
         console.log(CombineString);
     }
